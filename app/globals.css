@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================================== */
+/* == 1. VARIABLES Y TEMA            == */
+/* ================================== */
+:root {
+  --color-primario: #6366f1;
+  --color-secundario: #10b981;
+  --color-acento: #f59e0b;
+  --color-critico: #ef4444;
+  --gradiente-principal: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradiente-billetes: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+}
+
+@layer base {
+  /* ===== INICIO DE LA SOLUCIÓN ===== */
+  /*
+    Esta regla le dice al navegador que siempre reserve espacio
+    para la barra de scroll, incluso si no es necesaria.
+    Esto evita el "salto" de la página y el desbordamiento del header.
+  */
+  html {
+    scrollbar-gutter: stable;
+    scroll-snap-type: y mandatory;
+  }
+  /* ===== FIN DE LA SOLUCIÓN ===== */
+
+  body {
+    @apply bg-slate-900 text-slate-200;
+    font-family: var(--font-poppins), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection {
+    @apply bg-indigo-500/30;
+  }
+  ::-webkit-scrollbar { @apply w-2; }
+  ::-webkit-scrollbar-track { @apply bg-slate-800; }
+  ::-webkit-scrollbar-thumb { @apply bg-slate-600 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-slate-500; }
+}
+
+/* ================================== */
+/* == 2. COMPONENTES PERSONALIZADOS  == */
+/* ================================== */
+@layer components {
+  /* Transiciones base para elementos interactivos */
+  .btn, button, a {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  /* Estilo base para todas las tarjetas */
+  .card {
+    @apply bg-slate-800 border border-slate-700 rounded-lg shadow-lg;
+  }
+
+  /* Estilo específico y efecto hover para las tarjetas de billetes */
+  .billete-card {
+    @apply bg-slate-800 border border-slate-700 rounded-lg overflow-hidden shadow-lg 
+           cursor-pointer transition-all duration-300 ease-in-out;
+  }
+
+  .billete-card:hover {
+    @apply shadow-primary/20 shadow-2xl border-primary/50 
+           transform -translate-y-2;
+  }
+  .scroll-snap-start {
+    scroll-snap-align: start;
+}
+} 
+/* ================================== */
+/* == 3. ESTILOS ESPECÍFICOS         == */
+/* ================================== */
+#mapa-mundial {
+  @apply h-[700px] w-full rounded-lg shadow-lg border border-slate-700/50;
+}
+
+/* ================================== */
+/* == 4. ANIMACIONES Y UTILIDADES    == */
+/* ================================== */
+@layer utilities {
+  /* Keyframe de entrada: Escala y se desvanece */
+  @keyframes fade-in-scale {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+
+
+  /* Clase de utilidad para la animación de entrada */
+  .animate-fade-in-scale {
+    animation: fade-in-scale 0.7s ease-in-out both;
+  }
+  
+  /* Estilos para el efecto de giro 3D del billete */
+  .perspective-container {
+    perspective: 1500px; /* Define la profundidad de la escena 3D */
+  }
+
+  .flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s; /* La duración y suavidad de la animación de giro */
+    transform-style: preserve-3d;
+  }
+
+  .front-face,
+  .back-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden; /* Oculta la cara trasera de un elemento */
+  }
+
+  .back-face {
+    transform: rotateY(180deg); /* Pone la cara trasera en su posición inicial, girada */
+  }
+
+  .watermark-specimen {
+    position: absolute;
+    bottom: 10px; /* 10px desde abajo */
+    right: 10px;  /* 10px desde la derecha (esquinado) */
+    
+    /* Estilo del texto */
+    font-family: var(--font-roboto), sans-serif; /* Usamos Roboto para que sea claro */
+    font-weight: 700;
+    font-size: 14px; /* Tamaño pequeño */
+    color: rgba(255, 255, 255, 0.25); /* Transparente (blanco al 25%) */
+    
+    /* --- El efecto de "Relieve" (Emboss) --- */
+    /* Sombra clara (blanca) arriba-izquierda */
+    /* Sombra oscura (negra) abajo-derecha */
+    text-shadow: 
+      -1px -1px 1px rgba(255, 255, 255, 0.3),
+       1px  1px 1px rgba(0, 0, 0, 0.3);
+      
+    /* Propiedades clave */
+    pointer-events: none; /* Evita que el texto bloquee el clic en la imagen */
+    user-select: none;    /* Evita que el texto se pueda seleccionar */
+    z-index: 10;          /* Asegura que esté sobre la imagen */
+      }
+    }
+
+  /* ----- INICIO DEL CÓDIGO AÑADIDO ----- */
+  /* Keyframe para la animación del borde */
+  @keyframes pulse-border {
+    0%, 100% {
+      /* Usa el color del borde por defecto que tienes para tus tarjetas */
+      border-color: #334155; /* Corresponde a slate-700 */
+    }
+    50% {
+      /* Usa tu color primario para el efecto de pulso */
+      border-color: #6366f1; /* Corresponde a tu --color-primario */
+    }
+  }
+
+  /* Clase de utilidad para aplicar la animación */
+  .animate-pulse-border {
+    animation: pulse-border 1.5s ease-in-out;
+  }
+  /* ----- FIN DEL CÓDIGO AÑADIDO ----- */
