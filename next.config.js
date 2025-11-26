@@ -11,6 +11,11 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'flagcdn.com', // O el hostname de tu API de banderas
       },
+      {
+        protocol: 'https',
+        hostname: 'ihbcuymzbjjqs24e.public.blob.vercel-storage.com',
+        pathname: '/billetes/**',
+      },
     ],
     formats: ['image/webp'],
   },
@@ -20,5 +25,7 @@ const nextConfig = {
   swcMinify: true,
   reactStrictMode: true,
 }
+
+
 
 module.exports = nextConfig
