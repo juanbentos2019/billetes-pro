@@ -22,68 +22,68 @@ export const billetesData: BilletesData = {
         {
             denominacion: '10 Pesos',
             versiones: [
-                { anioEmision: '1998', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_10pesos_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_10pesos_anterior_dorso.webp' },
-                { anioEmision: '2016', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_10pesos_nueva_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_10pesos_nueva_dorso.webp' }
+                { anioEmision: '1998', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_10pesos_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_10pesos_anterior_dorso.jpg' },
+                { anioEmision: '2016', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_10pesos_nueva_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_10pesos_nueva_dorso.jpg' }
             ]
         },
         {
             denominacion: '20 Pesos',
             versiones: [
-                { anioEmision: '1999', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_20pesos_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_20pesos_anterior_dorso.webp' },
-                { anioEmision: '2017', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_20pesos_nueva_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_20pesos_nueva_dorso.webp' }
+                { anioEmision: '1999', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_20pesos_anterior_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_20pesos_anterior_dorso.jpg' },
+                { anioEmision: '2017', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_20pesos_nueva_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_20pesos_nueva_dorso.jpg' }
             ]
         },
         {
             denominacion: '50 Pesos',
             versiones: [
-                { anioEmision: '1999', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_50pesos_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_50pesos_anterior_dorso.webp' },
-                { anioEmision: '2017', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_50pesos_malvinas_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_50pesos_malvinas_dorso.webp' },
-                { anioEmision: '2020', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_50pesos_nueva_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_50pesos_nueva_dorso.webp' }
+                { anioEmision: '1999', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_50pesos_anterior_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_50pesos_anterior_dorso.jpg' },
+                { anioEmision: '2017', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_50pesos_malvinas_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_50pesos_malvinas_dorso.jpg' },
+                { anioEmision: '2020', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_50pesos_nueva_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_50pesos_nueva_dorso.jpg' }
             ]
         },
         {
             denominacion: '100 Pesos',
             versiones: [
-                { anioEmision: '1999', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_anterior_dorso.webp' },
-                { anioEmision: '2017', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_eva_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_50pesos_eva_dorso.webp' },
-                { anioEmision: '2020', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_nueva_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_nueva_dorso.webp' }
+                { anioEmision: '1999', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_100pesos_anterior_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_100pesos_anterior_dorso.jpg' },
+                { anioEmision: '2017', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_100pesos_eva_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_50pesos_eva_dorso.jpg' },
+                { anioEmision: '2020', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_100pesos_nueva_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_100pesos_nueva_dorso.jpg' }
             ]
         },
         {
             denominacion: '200 Pesos',
             versiones: [
-                { anioEmision: '2016', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_200pesos_actual_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_200pesos_actual_dorso.webp' }
+                { anioEmision: '2016', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_200pesos_actual_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_200pesos_actual_dorso.jpg' }
             ]
         },
         {
             denominacion: '500 Pesos',
             versiones: [
-                { anioEmision: '2016', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_500pesos_actual_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_500pesos_actual_dorso.webp' }
+                { anioEmision: '2016', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_500pesos_actual_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_500pesos_actual_dorso.jpg' }
             ]
         },
         {
             denominacion: '1000 Pesos',
             versiones: [
-                { anioEmision: '2017', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_1000pesos_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_1000pesos_anterior_dorso.webp' },
-                { anioEmision: '2022', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_1000pesos_nuevo_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_1000pesos_nuevo_dorso.webp' }
+                { anioEmision: '2017', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_1000pesos_anterior_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_1000pesos_anterior_dorso.jpg' },
+                { anioEmision: '2022', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_1000pesos_nuevo_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_1000pesos_nuevo_dorso.jpg' }
             ]
         },
         {
             denominacion: '2000 Pesos',
             versiones: [
-                { anioEmision: '2022', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_2000pesos_actual_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_2000pesos_actual_dorso.webp' }
+                { anioEmision: '2022', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_2000pesos_actual_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_2000pesos_actual_dorso.jpg' }
             ]
         },
         {
             denominacion: '10000 Pesos',
             versiones: [
-                { anioEmision: '2024', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_10000pesos_actual_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_10000pesos_actual_dorso.webp' }
+                { anioEmision: '2024', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_10000pesos_actual_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_10000pesos_actual_dorso.jpg' }
             ]
         },
         {
             denominacion: '20000 Pesos',
             versiones: [
-                { anioEmision: '2024', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_20000pesos_actual_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_20000pesos_actual_dorso.webp' }
+                { anioEmision: '2024', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_20000pesos_actual_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/argentina_20000pesos_actual_dorso.jpg' }
             ]
         }
     ],
@@ -1130,73 +1130,73 @@ export const billetesData: BilletesData = {
         {
             denominacion: '100 Dong',
             versiones: [
-                { anioEmision: '1992', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_100dong_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_100dong_anterior_dorso.webp' }
+                { anioEmision: '1992', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_100dong_anterior_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_100dong_anterior_dorso.jpg' }
             ]
         },
         {
             denominacion: '200 Dong',
             versiones: [
-                { anioEmision: '1987', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_200dong_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_200dong_anterior_dorso.webp' }
+                { anioEmision: '1987', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_200dong_anterior_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_200dong_anterior_dorso.jpg' }
             ]
         },
         {
             denominacion: '500 Dong',
             versiones: [
-                { anioEmision: '1989', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_500dong_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_500dong_anterior_dorso.webp' }
+                { anioEmision: '1989', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_500dong_anterior_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_500dong_anterior_dorso.jpg' }
             ]
         },
         {
             denominacion: '1000 Dong',
             versiones: [
-                { anioEmision: '1989', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_1000dong_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_1000dong_anterior_dorso.webp' }
+                { anioEmision: '1989', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_1000dong_anterior_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_1000dong_anterior_dorso.jpg' }
             ]
         },
         {
             denominacion: '2000 Dong',
             versiones: [
-                { anioEmision: '1989', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_2000dong_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_2000dong_anterior_dorso.webp' }
+                { anioEmision: '1989', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_2000dong_anterior_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_2000dong_anterior_dorso.jpg' }
             ]
         },
         {
             denominacion: '5000 Dong',
             versiones: [
-                { anioEmision: '1993', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_5000dong_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_5000dong_anterior_dorso.webp' }
+                { anioEmision: '1993', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_5000dong_anterior_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_5000dong_anterior_dorso.jpg' }
             ]
         },
         {
             denominacion: '10000 Dong',
             versiones: [
-                { anioEmision: '2006', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_10000dong_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_10000dong_anterior_dorso.webp' }
+                { anioEmision: '2006', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_10000dong_anterior_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_10000dong_anterior_dorso.jpg' }
             ]
         },
         {
             denominacion: '20000 Dong',
             versiones: [
-                { anioEmision: '2006', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_20000dong_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_20000dong_anterior_dorso.webp' }
+                { anioEmision: '2006', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_20000dong_anterior_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_20000dong_anterior_dorso.jpg' }
             ]
         },
         {
             denominacion: '50000 Dong',
             versiones: [
-                { anioEmision: '2003', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_50000dong_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_50000dong_anterior_dorso.webp' }
+                { anioEmision: '2003', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_50000dong_anterior_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_50000dong_anterior_dorso.jpg' }
             ]
         },
         {
             denominacion: '100000 Dong',
             versiones: [
-                { anioEmision: '2004', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_100000dong_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_100000dong_anterior_dorso.webp' }
+                { anioEmision: '2004', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_100000dong_anterior_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_100000dong_anterior_dorso.jpg' }
             ]
         },
         {
             denominacion: '200000 Dong',
             versiones: [
-                { anioEmision: '2006', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_200000dong_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_200000dong_anterior_dorso.webp' }
+                { anioEmision: '2006', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_200000dong_anterior_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_200000dong_anterior_dorso.jpg' }
             ]
         },
         {
             denominacion: '500000 Dong',
             versiones: [
-                { anioEmision: '2003', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_500000dong_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_500000dong_anterior_dorso.webp' }
+                { anioEmision: '2003', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_500000dong_anterior_frente.jpg', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/vietnam/vietnam_500000dong_anterior_dorso.jpg' }
             ]
         }
     ],
@@ -5919,7 +5919,7 @@ export const billetesData: BilletesData = {
         {
             denominacion: '10 Emalangeni',
             versiones: [
-                { anioEmision: '2010', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/emalangeni/webp/esuatini_10emalangeni_frente_2010.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/emalangeni/webp/esuatini_10emalangeni_dorso2010.webp' },
+                { anioEmision: '2010', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/esuatini/webp/emalangeni_10emalangeni_frente_2010.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/esuatini/webp/emalangeni_10emalangeni_dorso2024.webp' },
                 { anioEmision: '2024', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/emalangeni/webp/esuatini_10emalangeni_frente_2024.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/emalangeni/webp/esuatini_10emalangeni_dorso2024.webp' }
             ]
 
