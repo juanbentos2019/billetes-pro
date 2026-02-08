@@ -3,43 +3,63 @@ import { billetesEuro } from '../billetes-comunes';
 
 export const billetesAmericaSur: Record<string, Billete[]> = {
   "Argentina": [
-    { denominacion: '10 Pesos', versiones: [
-      { anioEmision: '1998', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_10pesos_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_10pesos_anterior_dorso.webp' },
-      { anioEmision: '2016', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_10pesos_nueva_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_10pesos_nueva_dorso.webp' }
-    ]},
-    { denominacion: '20 Pesos', versiones: [
-      { anioEmision: '1999', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_20pesos_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_20pesos_anterior_dorso.webp' },
-      { anioEmision: '2017', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_20pesos_nueva_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_20pesos_nueva_dorso.webp' }
-    ]},
-    { denominacion: '50 Pesos', versiones: [
-      { anioEmision: '1999', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_50pesos_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_50pesos_anterior_dorso.webp' },
-      { anioEmision: '2017', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_50pesos_malvinas_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_50pesos_malvinas_dorso.webp' },
-      { anioEmision: '2020', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_50pesos_nueva_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_50pesos_nueva_dorso.webp' }
-    ]},
-    { denominacion: '100 Pesos', versiones: [
-      { anioEmision: '1999', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_anterior_dorso.webp' },
-      { anioEmision: '2017', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_eva_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_eva_dorso.webp' },
-      { anioEmision: '2020', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_nueva_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_nueva_dorso.webp' }
-    ]},
-    { denominacion: '200 Pesos', versiones: [
-      { anioEmision: '2016', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_200pesos_actual_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_200pesos_actual_dorso.webp' }
-    ]},
-    { denominacion: '500 Pesos', versiones: [
-      { anioEmision: '2016', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_500pesos_actual_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_500pesos_actual_dorso.webp' }
-    ]},
-    { denominacion: '1000 Pesos', versiones: [
-      { anioEmision: '2017', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_1000pesos_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_1000pesos_anterior_dorso.webp' },
-      { anioEmision: '2022', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_1000pesos_nuevo_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_1000pesos_nuevo_dorso.webp' }
-    ]},
-    { denominacion: '2000 Pesos', versiones: [
-      { anioEmision: '2022', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_2000pesos_actual_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_2000pesos_actual_dorso.webp' }
-    ]},
-    { denominacion: '10000 Pesos', versiones: [
-      { anioEmision: '2024', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_10000pesos_actual_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_10000pesos_actual_dorso.webp' }
-    ]},
-    { denominacion: '20000 Pesos', versiones: [
-      { anioEmision: '2024', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_20000pesos_actual_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_20000pesos_actual_dorso.webp' }
-    ]}
+    {
+      denominacion: '10 Pesos', versiones: [
+        { anioEmision: '1998', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_10pesos_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_10pesos_anterior_dorso.webp' },
+        { anioEmision: '2016', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_10pesos_nueva_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_10pesos_nueva_dorso.webp' }
+      ]
+    },
+    {
+      denominacion: '20 Pesos', versiones: [
+        { anioEmision: '1999', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_20pesos_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_20pesos_anterior_dorso.webp' },
+        { anioEmision: '2017', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_20pesos_nueva_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_20pesos_nueva_dorso.webp' }
+      ]
+    },
+    {
+      denominacion: '50 Pesos', versiones: [
+        { anioEmision: '1999', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_50pesos_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_50pesos_anterior_dorso.webp' },
+        { anioEmision: '2017', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_50pesos_malvinas_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_50pesos_malvinas_dorso.webp' },
+        { anioEmision: '2020', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_50pesos_nueva_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_50pesos_nueva_dorso.webp' }
+      ]
+    },
+    {
+      denominacion: '100 Pesos', versiones: [
+        { anioEmision: '1999', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_anterior_dorso.webp' },
+        { anioEmision: '2017', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_eva_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_eva_dorso.webp' },
+        { anioEmision: '2020', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_nueva_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_nueva_dorso.webp' }
+      ]
+    },
+    {
+      denominacion: '200 Pesos', versiones: [
+        { anioEmision: '2016', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_200pesos_actual_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_200pesos_actual_dorso.webp' }
+      ]
+    },
+    {
+      denominacion: '500 Pesos', versiones: [
+        { anioEmision: '2016', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_500pesos_actual_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_500pesos_actual_dorso.webp' }
+      ]
+    },
+    {
+      denominacion: '1000 Pesos', versiones: [
+        { anioEmision: '2017', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_1000pesos_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_1000pesos_anterior_dorso.webp' },
+        { anioEmision: '2022', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_1000pesos_nuevo_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_1000pesos_nuevo_dorso.webp' }
+      ]
+    },
+    {
+      denominacion: '2000 Pesos', versiones: [
+        { anioEmision: '2022', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_2000pesos_actual_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_2000pesos_actual_dorso.webp' }
+      ]
+    },
+    {
+      denominacion: '10000 Pesos', versiones: [
+        { anioEmision: '2024', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_10000pesos_actual_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_10000pesos_actual_dorso.webp' }
+      ]
+    },
+    {
+      denominacion: '20000 Pesos', versiones: [
+        { anioEmision: '2024', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_20000pesos_actual_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_20000pesos_actual_dorso.webp' }
+      ]
+    }
   ],
   "Bolivia": [
     {
