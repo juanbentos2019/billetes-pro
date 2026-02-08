@@ -41,7 +41,7 @@ export const billetesData: BilletesData = {
         {
             denominacion: '100 Pesos', versiones: [
                 { anioEmision: '1999', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_anterior_dorso.webp' },
-                { anioEmision: '2017', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_eva_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_eva_dorso.webp' },
+                { anioEmision: '2017', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_eva_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_eva_frente.webp' },
                 { anioEmision: '2020', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_nueva_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/argentina/webp/argentina_100pesos_nueva_dorso.webp' }
             ]
         },
@@ -1263,37 +1263,7 @@ export const billetesData: BilletesData = {
             ]
         }
     ],
-    "Bolivia": [
-        {
-            denominacion: '10 Bolivianos',
-            versiones: [
-                { anioEmision: '2018', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/bolivia/webp/bolivia_10boliviano_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/bolivia/webp/bolivia_1boliviano_anterior_dorso.webp' }
-            ]
-        },
-        {
-            denominacion: '20 Bolivianos',
-            versiones: [
-                { anioEmision: '2018', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/bolivia/webp/bolivia_20boliviano_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/bolivia/webp/bolivia_20boliviano_anterior_dorso.webp' }
-            ]
-        },
-        {
-            denominacion: '50 Bolivianos',
-            versiones: [
-                { anioEmision: '2018', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/bolivia/webp/bolivia_50boliviano_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/bolivia/webp/bolivia_50boliviano_anterior_dorso.webp' }
-            ]
-        }, {
-            denominacion: '100 Bolivianos',
-            versiones: [
-                { anioEmision: '2018', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/bolivia/webp/bolivia_100boliviano_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/bolivia/webp/bolivia_100boliviano_anterior_dorso.webp' }
-            ]
-        },
-        {
-            denominacion: '200 Bolivianos',
-            versiones: [
-                { anioEmision: '2018', imagenFrente: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/bolivia/webp/bolivia_200boliviano_anterior_frente.webp', imagenDorso: 'https://ihbcuymzbjjqs24e.public.blob.vercel-storage.com/billetes/bolivia/webp/bolivia_200boliviano_anterior_dorso.webp' }
-            ]
-        }
-    ],
+
     "Armenia": [
         {
             denominacion: '500 Dram',
