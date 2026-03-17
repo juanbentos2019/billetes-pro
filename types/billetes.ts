@@ -6,6 +6,12 @@ export interface BilleteVersion {
   imagenDorso: string;
   caracteristicas?: string[];
   seguridad?: string[];
+  isHidden?: boolean;
+  infoSec?: {
+    titulo: string;
+    contenido?: string;
+    detalles: { imagen: string; texto: string }[];
+  };
 }
 
 export interface Billete {

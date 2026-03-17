@@ -1,0 +1,141 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ------------------------------------------------------
+// MODELOS PARA EL SISTEMA SaaS
+// ------------------------------------------------------
+
+enum Role {
+  SUPER_MASTER
+  ADMIN_EMPRESA
+  USER
+}
+
+model Empresa {
+  id               String    @id @default(cuid())
+  nombre           String
+  maxCajeros       Int       @default(1)
+  activo           Boolean   @default(true) // Indicador visual de Al Día o Suspendida
+  estadoCrm        String    @default("LEAD") // LEAD, TRIAL, CLIENTE
+  planType         String    @default("BASIC") // Ej: BASIC, PREMIUM
+  fechaVencimiento DateTime? // Vencimiento de la suscripción
+  notasPagos       String?   @db.Text
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  // Relaciones
+  usuarios User[]
+  tickets  Ticket[]
+}
+
+model User {
+  id         String  @id @default(cuid())
+  nombre     String?
+  email      String  @unique
+  password   String // Contraseña hasheada (bcrypt)
+  role       Role    @default(USER)
+  loginToken String? // Token único de sesión para forzar desconexión en otros dispositivos
+
+  // -- Bloqueo por Fuerza Bruta --
+  failedLoginAttempts Int       @default(0)
+  lockedUntil         DateTime?
+  lastLogin           DateTime? // Última conexión exitosa
+
+  activo    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relaciones (Un usuario siempre pertenece a una empresa, excepto quizás el SUPER_MASTER)
+  empresaId String?
+  empresa   Empresa? @relation(fields: [empresaId], references: [id], onDelete: Cascade)
+
+  // Entradas de blog creadas por este usuario (generalmente SUPER_MASTER)
+  posts Post[]
+
+  // Tickets de soporte creados por este usuario
+  tickets Ticket[]
+}
+
+// Modelo para el Sistema de Tickets de Soporte
+model Ticket {
+  id      String @id @default(cuid())
+  asunto  String
+  mensaje String @db.Text
+  estado  String @default("OPEN") // OPEN, IN_PROGRESS, RESOLVED, CLOSED
+
+  autorId String
+  autor   User   @relation(fields: [autorId], references: [id], onDelete: Cascade)
+
+  empresaId String
+  empresa   Empresa @relation(fields: [empresaId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Modelo para las Noticias / Entradas de Blog
+model Post {
+  id        String  @id @default(uuid())
+  title     String
+  slug      String  @unique // URL amigable
+  excerpt   String  @db.Text
+  content   String  @db.Text
+  imageUrl  String?
+  published Boolean @default(true)
+
+  authorId String
+  author   User   @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Modelo para Ocultamiento Dinámico de Billetes (exclusivo Super Master)
+model BilleteOculto {
+  id           String   @id @default(cuid())
+  pais         String // Ej: 'argentina'
+  denominacion String // Ej: '1000 Pesos'
+  anioEmision  String // Ej: '2023'
+  createdAt    DateTime @default(now())
+
+  // Evitamos que exista más de una regla de ocultamiento para exactamente el mismo billete
+  @@unique([pais, denominacion, anioEmision])
+}
+
+// Modelo para Información de Seguridad por Billete
+model BilleteInfo {
+  id           String @id @default(cuid())
+  pais         String // Ej: 'argentina'
+  denominacion String // Ej: '1000 Pesos'
+  anioEmision  String // Ej: '2023'
+
+  titulo    String
+  contenido String? @db.Text
+  detalles  Json    @default("[]") // Array de objetos { imagen: string, texto: string }
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Solo puede existir UN bloque de información por cada versión de billete
+  @@unique([pais, denominacion, anioEmision])
+}
+
+// Modelo para Contactos de Ventas Corporativas
+model CorporateLead {
+  id        String   @id @default(cuid())
+  nombre    String
+  empresa   String
+  email     String
+  telefono  String?
+  mensaje   String   @db.Text
+  estado    String   @default("PENDING") // PENDING, CONTACTED, CLOSED
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

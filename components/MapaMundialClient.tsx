@@ -24,7 +24,13 @@ export default function MapaMundial({ onPaisSeleccionado, paisSeleccionado }: Pr
   const mapRef = useRef<L.Map | null>(null);
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const geojsonLayerRef = useRef<L.GeoJSON | null>(null);
+  const onPaisSeleccionadoRef = useRef(onPaisSeleccionado);
   const paisesPequenos = ["Bahamas", "Hong Kong", "Singapur", "Cabo Verde", "Comoros"];
+
+  // Mantener siempre la referencia actual del callback
+  useEffect(() => {
+    onPaisSeleccionadoRef.current = onPaisSeleccionado;
+  }, [onPaisSeleccionado]);
 
   useEffect(() => {
     if (mapContainerRef.current && !mapRef.current) {
@@ -69,7 +75,7 @@ export default function MapaMundial({ onPaisSeleccionado, paisSeleccionado }: Pr
             if (tieneBilletes) {
               layer.on({
                 click: () => {
-                  onPaisSeleccionado(paisEspanol);
+                  onPaisSeleccionadoRef.current(paisEspanol);
                 },
                 // Solo cambiamos el cursor al pasar por encima
                 mouseover: () => {
@@ -103,7 +109,7 @@ export default function MapaMundial({ onPaisSeleccionado, paisSeleccionado }: Pr
 
             circleMarker.on({
               click: () => {
-                onPaisSeleccionado(pais);
+                onPaisSeleccionadoRef.current(pais);
               },
               mouseover: () => {
                 if (mapRef.current) {

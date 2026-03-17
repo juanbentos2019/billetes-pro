@@ -16,6 +16,10 @@ const nextConfig = {
         hostname: 'ihbcuymzbjjqs24e.public.blob.vercel-storage.com',
         pathname: '/billetes/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'placehold.co',
+      },
     ],
     formats: ['image/webp'],
   },

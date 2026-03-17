@@ -7,8 +7,8 @@ import { billetesAsia } from './asia';
 import { billetesMedioOrienteAsia } from './medio-oriente-asia';
 import { billetesAmericaSur } from './america-sur';
 import { billetesAmericaNorteCentral } from './america-norte-central';
-// NOTA: Cuando tengas el archivo de África refactorizado, solo tendrás que importarlo aquí.
- import { billetesAfrica } from './africa';
+import { billetesAfrica } from './africa';
+import { billetesOceania } from './oceania';
 
 // --- PASO 2: Importar datos de monedas comunes y las listas de países que las usan ---
 import { billetesEuro, billetesCFA } from '../billetes-comunes';
@@ -70,4 +70,5 @@ export const todosLosBilletes: Record<string, Billete[]> = {
   ...billetesAsia,
   ...billetesMedioOrienteAsia,
   ...billetesAfrica,
+  ...billetesOceania,
 };

@@ -1,3 +1,5 @@
+import { todosLosBilletes } from './billetes-data/index';
+
 // Mapeo completo de nombres de países de inglés a español
 export const nombresPaisesCompleto: Record<string, string> = {
   // América
@@ -18,7 +20,7 @@ export const nombresPaisesCompleto: Record<string, string> = {
   'Uruguay': 'Uruguay',
   'Costa Rica': 'CostaRica',
   'Panama': 'Panama',
-  'El Salvador': 'El Salvador',
+  'El Salvador': 'ElSalvador',
   'Guatemala': 'Guatemala',
   'Honduras': 'Honduras',
   'Nicaragua': 'Nicaragua',
@@ -140,8 +142,8 @@ export const nombresPaisesCompleto: Record<string, string> = {
   'Kyrgyzstan': 'Kyrgyzstan',
   'Hong Kong': 'Hong Kong',
   'Taiwan': 'Taiwan',
-  'Timor-Leste': 'Timor Oriental',
-  'East Timor': 'Timor Oriental',
+  'Timor-Leste': 'TimorOriental',
+  'East Timor': 'TimorOriental',
   'Brunei': 'Brunei',
   
   // África
@@ -211,7 +213,7 @@ export const nombresPaisesCompleto: Record<string, string> = {
   'Fiji': 'Fiji',
   'Solomon Islands': 'Islas Salomon',
   'Vanuatu': 'Vanuatu',
-  'Nueva Caledonia': 'Nueva Caledonia',
+  'New Caledonia': 'Nueva Caledonia',
   'Samoa': 'Samoa',
   'Tonga': 'Tonga',
   "Western Sahara": "Sahara Occidental",
@@ -222,75 +224,5 @@ export const nombresPaisesCompleto: Record<string, string> = {
   'Northern Cyprus': 'Chipre del Norte',
 };
 
-// Lista de todos los países que tienen billetes en el sistema
-export const paisesConBilletes = [
-  // Europa - Países Euro
-  'Alemania', 'Austria', 'Belgica', 'Chipre', 'Croacia', 'Eslovaquia',
-  'Eslovenia', 'España', 'Estonia', 'Finlandia', 'Francia', 'Grecia',
-  'Irlanda', 'Italia', 'Kosovo', 'Letonia', 'Lituania', 'Luxemburgo',
-  'Malta', 'Montenegro', 'Países Bajos', 'Portugal',
-  
-  // África - Países CFA Occidental
-  'Benin', 'Burkina Faso', 'Costa de Marfil', 'Guinea Bissau',
-  'Mali', 'Niger', 'Senegal', 'Togo',
-  
-  // África - Países CFA Central
-  'Camerun', 'Chad', 'Gabon', 'Guinea Ecuatorial',
-  'Republica Centroafricana', 'Republica del Congo',
-  
-  // Países con Dólar US
-  'USA', 'Ecuador', 'Panama', 'El Salvador',
-  'Puerto Rico', 'Zimbabwe', 'Timor Oriental',
-  
-  // Países con Lira Turca
-  'Turquia', 'Chipre del Norte',
-  
-  // América
-  'Argentina', 'Brasil', 'Canada', 'Chile', 'Colombia', 'Mexico',
-  'Peru', 'Uruguay', 'Venezuela', 'Bolivia', 'Paraguay',
-  'CostaRica', 'Guatemala', 'Honduras', 'Nicaragua',
-  'Jamaica', 'Dominicana', 'Haiti', 'Cuba',
-  'Trinidad y Tobago', 'Bahamas', 'Barbados', 'Belice',
-  'Surinam', 'Guyana',
-  
-  // Europa (no Euro)
-  'Inglaterra', 'Suiza', 'Noruega', 'Suecia', 'Dinamarca',
-  'Polonia', 'Republica Checa', 'Hungria', 'Rumania',
-  'Bulgaria', 'Serbia', 'Bosnia', 'Albania', 'Macedonia',
-  'Islandia', 'Rusia', 'Ucrania', 'Bielorrusia', 'Moldavia',
-  'Georgia', 'Armenia', 'Azerbaiyan',
-  
-  // Asia
-  'China', 'Japon', 'Corea del Sur', 'Corea del Norte',
-  'India', 'Pakistan', 'Bangladesh', 'Afganistan',
-  'Iran', 'Irak', 'Arabia Saudita', 'Emiratos Arabes Unidos',
-  'Kuwait', 'Qatar', 'Bahrain', 'Oman', 'Yemen',
-  'Israel', 'Jordania', 'Libano', 'Siria',
-  'Tailandia', 'Vietnam', 'Filipinas', 'Indonesia',
-  'Malasia', 'Singapur', 'Myanmar', 'Camboya', 'Laos',
-  'Nepal', 'Butan', 'Sri Lanka', 'Mongolia',
-  'Kazajstan', 'Uzbekistan', 'Turkmenistan', 'Tajikistan',
-  'Kyrgyzstan', 'Hong Kong', 'Taiwan', 'Brunei',
-  
-  // África (no CFA)
-  'Egipto', 'Sudafrica', 'Nigeria', 'Kenya', 'Ghana',
-  'Marruecos', 'Argelia', 'Tunez', 'Libia',
-  'Sudan', 'Sudan del Sur', 'Etiopia', 'Somalia',
-  'Eritrea', 'Djibouti', 'Tanzania', 'Uganda',
-  'Ruanda', 'Burundi', 'Republica Democratica del Congo',
-  'Angola', 'Zambia', 'Mozambique', 'Madagascar',
-  'Malawi', 'Botswana', 'Namibia', 'Esuatini', 'Lesoto',
-  'Gambia', 'Guinea', 'Sierra Leona', 'Liberia',
-  'Mauritania', 'Cabo Verde', 'Comoras', 'Seychelles',
-  'Mauricio', 'Somaliland', "Sahara Occidental",
-  
-  // Oceanía
-  'Australia', 'Nueva Zelanda', 'Papua Nueva Guinea',
-  'Fiji', 'Islas Salomon', 'Vanuatu', 'Nueva Caledonia',
-  'Samoa', 'Tonga',
-  
-  // Territorios especiales
-  'Islas Malvinas',
-  'Tierras Australes y Antárticas Francesas',
-  'Guyana Francesa'
-];
+// Lista generada automáticamente a partir de los datos reales de billetes
+export const paisesConBilletes = Object.keys(todosLosBilletes);

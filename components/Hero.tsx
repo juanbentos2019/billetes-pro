@@ -1,9 +1,26 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { todosLosBilletes } from '@/lib/billetes-data/index';
 
 export default function Hero() {
   const [particles, setParticles] = useState<Array<{ left: string; top: string; delay: string; duration: string }>>([]);
+
+  // Estadísticas calculadas dinámicamente
+  const paises = Object.keys(todosLosBilletes);
+  const totalPaises = paises.length;
+  const totalBilletes = paises.reduce((sum, pais) => {
+    return sum + todosLosBilletes[pais].reduce((s, b) => s + (b.versiones?.length || 1), 0);
+  }, 0);
+  const monedasUnicas = new Set(paises.map(pais => {
+    const primerBillete = todosLosBilletes[pais][0];
+    if (!primerBillete) return pais;
+    const denom = primerBillete.denominacion;
+    // Extraer nombre de moneda (ej: "100 Dólares" → "Dólares")
+    const match = denom.match(/\d+\s+(.+)/);
+    return match ? match[1] : denom;
+  })).size;
+  const anioActual = new Date().getFullYear();
 
   useEffect(() => {
     // Generar partículas solo en el cliente para evitar problemas de hidratación
@@ -19,9 +36,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Fondo con gradiente animado */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900">
-        <div className="absolute inset-0 bg-[url('https://source.unsplash.com/1600x900/?finance,money')] opacity-20 bg-cover bg-center" />
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900" />
       
       {/* Efecto de partículas flotantes */}
       <div className="absolute inset-0 overflow-hidden">
@@ -71,19 +86,19 @@ export default function Hero() {
         {/* Estadísticas */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in-delay-3">
           <div className="text-center">
-            <div className="text-3xl font-bold text-indigo-400">195+</div>
+            <div className="text-3xl font-bold text-indigo-400">{totalPaises}+</div>
             <div className="text-gray-400">Países</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-purple-400">2000+</div>
+            <div className="text-3xl font-bold text-purple-400">{totalBilletes}+</div>
             <div className="text-gray-400">Billetes</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-pink-400">130+</div>
+            <div className="text-3xl font-bold text-pink-400">{monedasUnicas}+</div>
             <div className="text-gray-400">Monedas</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-orange-400">2025</div>
+            <div className="text-3xl font-bold text-orange-400">{anioActual}</div>
             <div className="text-gray-400">Actualizado</div>
           </div>
         </div>

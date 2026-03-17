@@ -4,9 +4,11 @@ import './globals.css'
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Providers from '@/components/Providers';
+import ImpersonationBanner from '@/components/ImpersonationBanner';
+import ExpirationAlert from '@/components/ExpirationAlert';
 
 // Configuración de fuentes
-const poppins = Poppins({ 
+const poppins = Poppins({
   weight: ['300', '400', '600', '700'],
   subsets: ['latin'],
   variable: '--font-poppins'
@@ -21,19 +23,19 @@ export const metadata: Metadata = {
   title: 'Billetes Vigentes del Mundo - Plataforma de Información Financiera',
   description: 'Explorador completo de billetes mundiales vigentes. Descubra y compare billetes de diferentes países, años y denominaciones.',
   keywords: 'billetes, monedas, dinero, moneda mundial, divisas, colección, numismática',
-  authors: [{ name: 'FinanzaPro' }],
+  authors: [{ name: 'Billetes del Mundo' }],
   openGraph: {
     title: 'Billetes Vigentes del Mundo - Explorador de Monedas',
     description: 'Catálogo interactivo de billetes mundiales vigentes. Compare versiones y denominaciones de diferentes países.',
     type: 'website',
-    siteName: 'FinanzaPro',
+    siteName: 'Billetes del Mundo',
     locale: 'es_ES',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FinanzaPro - Expertos en Análisis Financiero',
-    description: 'Análisis profesional de mercados financieros. Información actualizada sobre oro, divisas y criptomonedas.',
-    site: '@FinanzaPro',
+    title: 'Billetes del Mundo - Explorador de Billetes Vigentes',
+    description: 'Catálogo interactivo de billetes mundiales vigentes. Compare versiones y denominaciones de diferentes países.',
+    site: '@BilletesMundo',
   },
   icons: {
     icon: '/favicon.png',
@@ -54,7 +56,9 @@ export default function RootLayout({
       */}
       <body className={poppins.className}>
         <Providers>
+          <ExpirationAlert />
           <Header />
+          <ImpersonationBanner />
           <main className="pt-16">
             {children}
           </main>

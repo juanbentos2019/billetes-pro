@@ -12,8 +12,8 @@ const Footer = () => {
           <Link href="/nosotros" className="text-slate-300 hover:text-primary transition-colors duration-300">
             Nosotros
           </Link>
-          <Link href="/contacto" className="text-slate-300 hover:text-primary transition-colors duration-300">
-            Contacto
+          <Link href="/soporte" className="text-slate-300 hover:text-primary transition-colors duration-300">
+            Soporte Técnico
           </Link>
           <Link href="/terminos-y-condiciones" className="text-slate-300 hover:text-primary transition-colors duration-300">
             Términos y Condiciones
