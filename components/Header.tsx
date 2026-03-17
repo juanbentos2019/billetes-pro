@@ -37,11 +37,13 @@ export default function Header() {
                 Nosotros
               </Link>
             </li>
+            {session?.user?.role !== 'USER' && (
             <li>
               <Link href="/precios" className="text-slate-300 hover:text-white transition font-medium">
                 Precios
               </Link>
             </li>
+            )}
             <li>
               <Link href="/noticias" className="text-slate-300 hover:text-white transition font-medium">
                 Noticias
@@ -120,7 +122,9 @@ export default function Header() {
           <li><Link href="/" className="block py-2 text-white hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Inicio</Link></li>
           <li><Link href="/" className="block py-2 text-white hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Billetes del Mundo</Link></li>
           <li><Link href="/nosotros" className="block py-2 text-white hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Nosotros</Link></li>
+          {session?.user?.role !== 'USER' && (
           <li><Link href="/precios" className="block py-2 text-white hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Precios / Planes</Link></li>
+          )}
           {session && session.user?.role !== 'SUPER_MASTER' && (
             <li><Link href="/soporte" className="block py-2 text-white hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Soporte</Link></li>
           )}
