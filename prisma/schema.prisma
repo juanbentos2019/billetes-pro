@@ -65,10 +65,11 @@ model User {
 
 // Modelo para el Sistema de Tickets de Soporte
 model Ticket {
-  id      String @id @default(cuid())
-  asunto  String
-  mensaje String @db.Text
-  estado  String @default("OPEN") // OPEN, IN_PROGRESS, RESOLVED, CLOSED
+  id        String  @id @default(cuid())
+  asunto    String
+  mensaje   String  @db.Text
+  estado    String  @default("OPEN") // OPEN, IN_PROGRESS, RESOLVED, CLOSED
+  archivado Boolean @default(false)  // Archivado: oculto en la vista principal
 
   autorId String
   autor   User   @relation(fields: [autorId], references: [id], onDelete: Cascade)

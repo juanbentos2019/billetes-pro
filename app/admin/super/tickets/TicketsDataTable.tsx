@@ -2,22 +2,31 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useUI } from '@/components/UIProvider';
 
 export default function TicketsDataTable({ tickets }: { tickets: any[] }) {
     const router = useRouter();
+    const { toast } = useUI();
     const [searchTerm, setSearchTerm] = useState('');
     const [statusFilter, setStatusFilter] = useState('ALL');
+    const [showArchived, setShowArchived] = useState(false);
     const [updatingId, setUpdatingId] = useState<string | null>(null);
 
     const filteredTickets = tickets.filter(ticket => {
-        const matchesSearch = 
+        // Mostrar archivados o no según el toggle
+        if (ticket.archivado !== showArchived) return false;
+
+        const matchesSearch =
             ticket.empresa.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
             ticket.asunto.toLowerCase().includes(searchTerm.toLowerCase());
-        
+
         const matchesStatus = statusFilter === 'ALL' || ticket.estado === statusFilter;
 
         return matchesSearch && matchesStatus;
     });
+
+    const archivedCount = tickets.filter(t => t.archivado).length;
+    const activeCount = tickets.filter(t => !t.archivado).length;
 
     const getStatusColor = (estado: string) => {
         switch (estado) {
@@ -29,16 +38,6 @@ export default function TicketsDataTable({ tickets }: { tickets: any[] }) {
         }
     };
 
-    const getStatusLabel = (estado: string) => {
-        switch (estado) {
-            case 'OPEN': return 'Abierto';
-            case 'IN_PROGRESS': return 'En Proceso';
-            case 'RESOLVED': return 'Resuelto';
-            case 'CLOSED': return 'Cerrado';
-            default: return estado;
-        }
-    };
-
     const handleStatusChange = async (ticketId: string, newStatus: string) => {
         setUpdatingId(ticketId);
         try {
@@ -47,16 +46,37 @@ export default function TicketsDataTable({ tickets }: { tickets: any[] }) {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ estado: newStatus })
             });
-
             if (res.ok) {
-                router.refresh(); // Recargar datos de servidor
+                router.refresh();
             } else {
-                const data = await res.json();
-                alert(data.error || 'Error al actualizar estado.');
+                toast('Error al actualizar el estado.', 'error');
             }
-        } catch (error) {
-            console.error(error);
-            alert('Error de red al actualizar estado.');
+        } catch {
+            toast('Error de red.', 'error');
+        } finally {
+            setUpdatingId(null);
+        }
+    };
+
+    const handleToggleArchive = async (ticketId: string, currentArchivado: boolean) => {
+        setUpdatingId(ticketId);
+        try {
+            const res = await fetch(`/api/tickets/${ticketId}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ archivado: !currentArchivado })
+            });
+            if (res.ok) {
+                toast(
+                    currentArchivado ? '📂 Ticket desarchivado.' : '🗃️ Ticket archivado.',
+                    'success'
+                );
+                router.refresh();
+            } else {
+                toast('Error al archivar el ticket.', 'error');
+            }
+        } catch {
+            toast('Error de red.', 'error');
         } finally {
             setUpdatingId(null);
         }
@@ -64,26 +84,42 @@ export default function TicketsDataTable({ tickets }: { tickets: any[] }) {
 
     return (
         <div>
-            {/* Controles de tabla */}
-            <div className="p-4 border-b border-slate-700 bg-slate-800/50 flex flex-col sm:flex-row gap-4 justify-between items-center">
-                <input
-                    type="text"
-                    placeholder="Buscar por empresa o asunto..."
-                    className="w-full sm:w-64 bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-sm text-white focus:ring-1 focus:ring-primary focus:border-primary outline-none"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                />
-                <select
-                    className="w-full sm:w-auto bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-sm text-white focus:ring-1 focus:ring-primary focus:border-primary outline-none"
-                    value={statusFilter}
-                    onChange={(e) => setStatusFilter(e.target.value)}
+            {/* Controles */}
+            <div className="p-4 border-b border-slate-700 bg-slate-800/50 flex flex-col sm:flex-row gap-4 justify-between items-center flex-wrap">
+                <div className="flex items-center gap-3 flex-wrap">
+                    <input
+                        type="text"
+                        placeholder="Buscar por empresa o asunto..."
+                        className="w-full sm:w-56 bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-sm text-white focus:ring-1 focus:ring-primary focus:border-primary outline-none"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    <select
+                        className="w-full sm:w-auto bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-sm text-white focus:ring-1 focus:ring-primary focus:border-primary outline-none"
+                        value={statusFilter}
+                        onChange={(e) => setStatusFilter(e.target.value)}
+                    >
+                        <option value="ALL">Todos los Estados</option>
+                        <option value="OPEN">Abiertos</option>
+                        <option value="IN_PROGRESS">En Proceso</option>
+                        <option value="RESOLVED">Resueltos</option>
+                        <option value="CLOSED">Cerrados</option>
+                    </select>
+                </div>
+
+                {/* Toggle archivo */}
+                <button
+                    onClick={() => setShowArchived(!showArchived)}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium border transition ${showArchived
+                        ? 'bg-amber-500/20 text-amber-400 border-amber-500/40 hover:bg-amber-500/30'
+                        : 'bg-slate-700/50 text-slate-400 border-slate-600 hover:bg-slate-700'
+                    }`}
                 >
-                    <option value="ALL">Todos los Estados</option>
-                    <option value="OPEN">Abiertos</option>
-                    <option value="IN_PROGRESS">En Proceso</option>
-                    <option value="RESOLVED">Resueltos</option>
-                    <option value="CLOSED">Cerrados</option>
-                </select>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8l1 12a2 2 0 002 2h8a2 2 0 002-2l1-12M10 12v4m4-4v4" />
+                    </svg>
+                    {showArchived ? `Ver activos (${activeCount})` : `Ver archivados (${archivedCount})`}
+                </button>
             </div>
 
             {/* Tabla */}
@@ -103,12 +139,15 @@ export default function TicketsDataTable({ tickets }: { tickets: any[] }) {
                         {filteredTickets.length === 0 ? (
                             <tr>
                                 <td colSpan={6} className="px-6 py-8 text-center text-slate-500 border-b border-slate-700/50">
-                                    No se encontraron tickets que coincidan con los filtros.
+                                    {showArchived ? 'No hay tickets archivados.' : 'No se encontraron tickets que coincidan con los filtros.'}
                                 </td>
                             </tr>
                         ) : (
                             filteredTickets.map((ticket) => (
-                                <tr key={ticket.id} className="border-b border-slate-700/50 hover:bg-slate-700/30 transition-colors group">
+                                <tr
+                                    key={ticket.id}
+                                    className={`border-b border-slate-700/50 hover:bg-slate-700/30 transition-colors group ${ticket.archivado ? 'opacity-60' : ''}`}
+                                >
                                     <td className="px-6 py-4 font-mono text-xs text-slate-500">
                                         #{ticket.id.substring(ticket.id.length - 6).toUpperCase()}
                                     </td>
@@ -118,10 +157,9 @@ export default function TicketsDataTable({ tickets }: { tickets: any[] }) {
                                             <span className="text-xs text-slate-400 truncate max-w-[160px]" title={ticket.autor.email}>
                                                 {ticket.autor.nombre || ticket.autor.email}
                                             </span>
-                                            <span className={`px-1.5 py-0.5 rounded text-[10px] font-bold border ${
-                                                ticket.autor.role === 'ADMIN_EMPRESA'
-                                                    ? 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30'
-                                                    : 'bg-slate-500/20 text-slate-400 border-slate-500/30'
+                                            <span className={`px-1.5 py-0.5 rounded text-[10px] font-bold border ${ticket.autor.role === 'ADMIN_EMPRESA'
+                                                ? 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30'
+                                                : 'bg-slate-500/20 text-slate-400 border-slate-500/30'
                                             }`}>
                                                 {ticket.autor.role === 'ADMIN_EMPRESA' ? 'Admin' : 'Cajero'}
                                             </span>
@@ -141,8 +179,8 @@ export default function TicketsDataTable({ tickets }: { tickets: any[] }) {
                                             <select
                                                 value={ticket.estado}
                                                 onChange={(e) => handleStatusChange(ticket.id, e.target.value)}
-                                                disabled={updatingId === ticket.id}
-                                                className={`appearance-none w-full px-2.5 py-1 text-xs font-semibold rounded-md border outline-none cursor-pointer text-center ${getStatusColor(ticket.estado)} ${updatingId === ticket.id ? 'opacity-50' : ''}`}
+                                                disabled={updatingId === ticket.id || ticket.archivado}
+                                                className={`appearance-none w-full px-2.5 py-1 text-xs font-semibold rounded-md border outline-none cursor-pointer text-center ${getStatusColor(ticket.estado)} ${updatingId === ticket.id || ticket.archivado ? 'opacity-50 cursor-not-allowed' : ''}`}
                                             >
                                                 <option value="OPEN" className="bg-slate-800 text-rose-400">Abierto</option>
                                                 <option value="IN_PROGRESS" className="bg-slate-800 text-amber-400">En Proceso</option>
@@ -155,14 +193,17 @@ export default function TicketsDataTable({ tickets }: { tickets: any[] }) {
                                         </div>
                                     </td>
                                     <td className="px-6 py-4 text-right">
-                                        <button 
-                                            className="text-primary hover:text-white bg-primary/10 hover:bg-primary/20 p-2 rounded-lg transition-colors"
-                                            title="Ver detalle del ticket"
-                                            onClick={() => alert(`Funcionalidad para responder ticket en desarrollo. \n\nMensaje: ${ticket.mensaje}`)}
+                                        <button
+                                            onClick={() => handleToggleArchive(ticket.id, ticket.archivado)}
+                                            disabled={updatingId === ticket.id}
+                                            title={ticket.archivado ? 'Desarchivar ticket' : 'Archivar ticket'}
+                                            className={`p-2 rounded-lg transition-colors disabled:opacity-50 ${ticket.archivado
+                                                ? 'text-amber-400 hover:text-white bg-amber-500/10 hover:bg-amber-500/20'
+                                                : 'text-slate-400 hover:text-white bg-slate-700/50 hover:bg-slate-600'
+                                            }`}
                                         >
-                                            <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                <path stroke="currentColor" strokeWidth="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
-                                                <path stroke="currentColor" strokeWidth="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8l1 12a2 2 0 002 2h8a2 2 0 002-2l1-12M10 12v4m4-4v4" />
                                             </svg>
                                         </button>
                                     </td>
